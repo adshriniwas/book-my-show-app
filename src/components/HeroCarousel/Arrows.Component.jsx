@@ -6,7 +6,7 @@ export function NextArrow(props) {
       <div
         className={{ ...props.className }}
         style={{ ...props.style }}
-        onClick={{ ...props.onClick }}
+        // onClick={{ ...props.onClick }}
       ></div>
     </>
   );
@@ -18,7 +18,7 @@ export function PrevArrow(props) {
       <div
         className={{ ...props.className }}
         style={{ ...props.style }}
-        onClick={{ ...props.onClick }}
+        // onClick={{ ...props.onClick }}
       ></div>
     </>
   );
