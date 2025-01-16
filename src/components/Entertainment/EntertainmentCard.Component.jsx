@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
+import { NextArrow, PrevArrow } from "../HeroCarousel/Arrows.Component";
 
 const EntertainmentImages = [
   "https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:l-text,ie-MTUrIEV2ZW50cw%3D%3D,co-FFFFFF,ff-Roboto,fs-64,lx-48,ly-320,tg-b,pa-8_0_0_0,l-end:w-300/bmshp-desktop-amusement-park-collection-202404190106.png",
@@ -63,6 +64,8 @@ const EntertainmentCardSlider = (props) => {
         },
       },
     ],
+    nextArrow: <NextArrow isDark={false} />,
+    prevArrow: <PrevArrow isDark={false} />,
   };
 
   return (

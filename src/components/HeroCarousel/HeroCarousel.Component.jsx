@@ -54,8 +54,8 @@ const HeroCarousel = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: "linear",
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow isDark={false}/>,
+    prevArrow: <PrevArrow isDark={false}/>,
   };
 
   var settings = {

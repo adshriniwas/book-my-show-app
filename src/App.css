@@ -1,8 +1,26 @@
 .slick-prev {
-  left: 3% !important;
+  left: 2% !important;
   z-index: 1;
 }
 .slick-next {
-  right: 3% !important;
+  right: 2% !important;
   z-index: 1;
+}
+
+.slick-prev::before, .slick-next::before  {
+  font-size: 25px !important;
+  opacity: 1 !important;
+  border-radius: 50% !important; 
+}
+
+.white_arrow::before {
+  color: white !important;
+  background-color: black;
+  padding: 5px;
+}
+
+.dark_arrow::before {
+  color: black !important;
+  background-color: white;
+  padding: 5px;
 }

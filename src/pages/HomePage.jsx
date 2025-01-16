@@ -6,27 +6,59 @@ import HeroCarousel from "../components/HeroCarousel/HeroCarousel.Component";
 import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
 import EntertainmentCardSlider from "../components/Entertainment/EntertainmentCard.Component";
 
+const topRatedMoviesOptions = {
+  method: 'GET',
+  url: 'movie/top_rated',
+  headers: {
+    accept: 'application/json',
+  }
+};
+
+const popularMoviesOptions = {
+  method: 'GET',
+  url: 'movie/popular',
+  headers: {
+    accept: 'application/json',
+  }
+};
+
+const upcomingMoviesOptions = {
+  method: 'GET',
+  url: 'movie/upcoming',
+  headers: {
+    accept: 'application/json',
+  }
+};
+
 const HomePage = () => {
   const [recommendedMovies, setRecommendedMovies] = useState([]);
   const [premiereMovies, setPremiereMovies] = useState([]);
   const [onlineStreamEvents, setOnlineStreamEvents] = useState([]);
 
-  const topRatedMoviesOptions = {
-    method: 'GET',
-    url: 'https://api.themoviedb.org/3/movie/top_rated',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOTBmZjg1N2MwMDUxNzIwNTc3YjZhZThiZWYxYjRlNyIsIm5iZiI6MTczNjg0OTI3Ni43NDcsInN1YiI6IjY3ODYzNzdjYWJhYmJiYTA0MGJiOTdmOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3bBKpOWD9e5a95yR-3P8-uPet9O1rSUXyK3Sr9dOHJg'
-    }
-  };
+  
 
   useEffect(()=>{
     const requestTopRatedMovies = async ()=>{
       const getTopRatedMovies = await axios.request(topRatedMoviesOptions)
       setRecommendedMovies(getTopRatedMovies.data.results)
-      console.log("top-rated : "+getTopRatedMovies)
     }
     requestTopRatedMovies();
+  },[]);
+
+  useEffect(()=>{
+    const requestPopularMovies = async ()=>{
+      const getPopularMovies = await axios.request(popularMoviesOptions)
+      setPremiereMovies(getPopularMovies.data.results)
+    }
+    requestPopularMovies();
+  },[]);
+
+  useEffect(()=>{
+    const requestUpcomingMovies = async ()=>{
+      const getUpcomingMovies = await axios.request(upcomingMoviesOptions)
+      setOnlineStreamEvents(getUpcomingMovies.data.results)
+    }
+    requestUpcomingMovies();
   },[]);
 
   return (
