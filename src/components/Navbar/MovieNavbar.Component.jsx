@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { BiChevronDown, BiMenu, BiSearch } from "react-icons/bi";
+import { BiMenu, BiSearch } from "react-icons/bi";
+import { GiShare } from "react-icons/gi";
 import { MovieContext } from "../../context/Movie.context";
 
 function NavSm() {
@@ -9,8 +10,9 @@ function NavSm() {
   return (
     <>
       <div className="text-white flex items-center justify-between">
-        <div>
-          <h3 className="text-xl font-bold">{movie.original_title ?? ""}</h3>
+        <div className="flex items-center gap-2">
+          <h3 className="text-xl font-bold">{movie.original_title ?? ""} </h3>
+          <GiShare className="text-xl font-bold mt-1"/>
         </div>
       </div>
     </>
@@ -25,8 +27,11 @@ function NavMd() {
         <img src="" alt="logo" className="w-full h-full" />
       </div> */}
       <div className="w-full">
+        <div className="flex items-center gap-2">
           <h3 className="text-white text-xl font-bold">{movie.original_title ?? ""}</h3>
+          <GiShare className="text-xl font-bold mt-1 text-white"/>
         </div>
+      </div>
       <div className="w-full flex items-center gap-3 bg-white px-3 py-1 rounded-md">
         <BiSearch />
         <input
